@@ -3,9 +3,9 @@
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
-        "dev": "concurrently \"lite-server --config=bs-config.json\"",
+        "dev": "concurrently \"lite-server --config=bs-config.json\" \"webpack --watch\"",
         "build": "webpack",
-        "postcss:watch": "postcss ./src/styles/styles.css -o ./src/styles/style.min.css --watch",
+        "postcss:watch": "postcss ./src/styles/styles.css -o ./src/styles/styles.css --watch",
         "start": "concurrently \"tsc -w\" \"lite-server\""
     },
     "keywords": [],

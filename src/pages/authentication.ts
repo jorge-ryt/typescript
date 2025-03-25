@@ -1,22 +1,19 @@
-//@ts-nocheck
-// import { v4 as uuidv4 } from 'https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuid.min.js';
-
+import { v4 as uuidv4 } from 'uuid';
 import {
 	NO_DATA_TEXT,
 	EMPTY_VALUES,
 	WRONG_CREDENTIALS,
 	PASSWORDS_DONT_MATCH,
 	EMAIL_ALREADY_EXIST
-} from "../constants/taskManagerConst";
-import SweetAlert from '../components/sweetAlert';
-import { sanitizeInput, validateEmail } from "../utils/sanitizeInput";
-import { IUser } from "../interfaces/authentication";
+} from "@/constants/taskManagerConst";
+import SweetAlert from '@/components/sweetAlert';
+import { sanitizeInput, validateEmail } from "@/utils/sanitizeInput";
+import { IUser, HTMLElementWithDataset } from "@/interfaces/authentication";
 // import { hashPassword, isPasswordValid } from '../utils/protectPassword.js';
 
-// Define types for HTML elements used
-interface HTMLElementWithDataset extends HTMLElement {
-	dataset: DOMStringMap;
-}
+document.addEventListener("DOMContentLoaded", () => {
+	new Authentication();
+});
 
 class Authentication {
 	private email: string;
@@ -261,7 +258,7 @@ class Authentication {
 
 			// Create new user Obj
 			const newUser: IUser = {
-				id: 'd',
+				id: uuidv4(),
 				email: this.email,
 				password: this.password
 			};
@@ -278,6 +275,3 @@ class Authentication {
 		this.clearForm();
 	}
 }
-
-// Initialize Task Manager Class
-const authentication = new Authentication();

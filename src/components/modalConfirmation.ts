@@ -1,43 +1,58 @@
-//@ts-nocheck
 import {
     CONFIRMATION_MODAL_TITLE,
     CONFIRMATION_MODAL_MESSAGE,
     CONFIRMATION_MODAL_CONFIRM_BTN,
     MODAL_CANCEL_BTN
-} from "../constants/taskManagerConst";
-import { loadTasks } from "../pages/taskManager";
+} from "@/constants/taskManagerConst";
+import { taskManagerInstance } from "@/pages/taskManager";
+import { ITask } from "@/interfaces/taskManager";
 
 class ModalConfirmation {
-    constructor(taskId, taskTitle) {
+    private taskId: string;
+    private taskTitle: string;
+    private modal: HTMLDialogElement | null;
+
+    constructor(taskId: string, taskTitle: string) {
         this.taskId = taskId;
         this.taskTitle = taskTitle;
         this.modal = null;
     }
 
-    open() {
-        const mainElement = document.getElementById("main");
+    open(): void {
+        const mainElement = document.getElementById("main") as HTMLElement | null;
+        if (!mainElement) {
+            console.error('Main element not found');
+            return;
+        }
+
         // Create modal dialog
         this.modal = document.createElement("dialog");
         this.modal.setAttribute("class", "confirmation-modal");
+
         // Create header
         const header = document.createElement("header");
         header.setAttribute("class", "modal-header");
+
         // Modal title
         const h3 = document.createElement("h3");
         h3.setAttribute("class", "modal-title");
         h3.textContent = CONFIRMATION_MODAL_TITLE;
+
         // Modal message
         const p = document.createElement("p");
         p.setAttribute("class", "modal-message");
         p.textContent = `${CONFIRMATION_MODAL_MESSAGE} the task: ${this.taskTitle}?`;
+
         // Buttons wrapper
         const btnWrapper = document.createElement("section");
         btnWrapper.setAttribute("class", "btn-wrapper");
+
         // Confirmation button
         const confirmBtn = document.createElement("button");
         confirmBtn.textContent = CONFIRMATION_MODAL_CONFIRM_BTN;
         confirmBtn.setAttribute("class", "confirm-btn");
         confirmBtn.setAttribute("type", "button");
+
         // Cancel button
         const cancelBtn = document.createElement("button");
         cancelBtn.textContent = MODAL_CANCEL_BTN;
@@ -57,19 +72,20 @@ class ModalConfirmation {
         confirmBtn.addEventListener("click", () => this.handleDeleteTask());
         cancelBtn.addEventListener("click", () => this.close());
 
+        // Show the modal
         this.modal.showModal();
     }
 
-    handleDeleteTask() {
-        const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-        const newTasks = tasks.filter(task => task.id !== this.taskId);
+    private handleDeleteTask(): void {
+        const tasks: ITask[] = JSON.parse(localStorage.getItem("tasks") || "[]");
+        const newTasks = tasks.filter((task) => task.id !== this.taskId);
 
         localStorage.setItem("tasks", JSON.stringify(newTasks));
-        loadTasks();
+        taskManagerInstance.loadTasks();
         this.close();
     }
 
-    close() {
+    private close(): void {
         if (this.modal) {
             this.modal.close();
             this.modal.remove();
