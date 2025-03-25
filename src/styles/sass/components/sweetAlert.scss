@@ -1,0 +1,55 @@
+@import "../global.scss";
+
+body {
+    main {
+        .sweetAlert-modal {
+            border: none;
+            box-shadow: -1px 6px 29px 2px rgba(0,0,0,0.27);
+            -webkit-box-shadow: -1px 6px 29px 2px rgba(0,0,0,0.27);
+            -moz-box-shadow: -1px 6px 29px 2px rgba(0,0,0,0.27);
+            border-radius: 0.3rem;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .modal-sweetAlert-header {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                .x-icon {
+                    margin: 0.5rem 0;
+                    color: $red-color;
+                    font-size: 2.5rem;
+                }
+                .modal-sweetAlert-title {
+                    font-weight: bold;
+                    font-size: large;
+                    margin: 0.2rem 0 1rem 0;
+                }
+            }
+            p {
+                color: $black-gray;
+                text-align: center;
+                font-weight: 400;
+                margin: 2rem 0;
+            }
+            .modal-sweetalert-okBtn{
+                background-color: $blue-color;
+                color: $white-color;
+                border: none;
+                padding: 0.4rem 0.5rem;
+                border-radius: 0.3rem;
+                cursor: pointer;
+                &:hover {
+                    background-color: lighten($blue-color, 10%);
+                    transform: translateY(-1px);
+                    transition: transform 0.2s ease-in-out;
+                    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+                }
+            }
+        }
+    }
+}

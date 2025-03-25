@@ -1,0 +1,1047 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu,
+nav, section {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+blockquote::before, blockquote::after, q::before, q::after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  max-width: 1200px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Arial";
+  background: url("../../assets/images/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: -1;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  max-width: 1200px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Arial";
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: -1;
+}
+body main {
+  width: 75%;
+  max-height: 450px;
+  padding: 1rem 0.5rem;
+  background-color: #f2f1f1;
+  border-radius: 0.5rem;
+  box-shadow: -1px 6px 29px 2px rgba(0, 0, 0, 0.58);
+  -webkit-box-shadow: -1px 6px 29px 2px rgba(0, 0, 0, 0.58);
+  -moz-box-shadow: -1px 6px 29px 2px rgba(0, 0, 0, 0.58);
+}
+body main header .heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+body main header .heading h1 {
+  text-align: center;
+  color: #0062ec;
+  font-family: "Arial";
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+body main header .heading .actions-wrapper {
+  position: absolute;
+  right: 2rem;
+  display: flex;
+  gap: 10px;
+}
+body main header .heading .actions-wrapper .download-file,
+body main header .heading .actions-wrapper .upload-file-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font-size: 1rem;
+  color: #585858;
+  cursor: pointer;
+}
+body main header .heading .actions-wrapper .download-file:hover,
+body main header .heading .actions-wrapper .upload-file-wrapper:hover {
+  color: rgb(95.3179916318, 173.9790794979, 226.6820083682);
+  transform: translateY(-1px);
+  transition: transform 0.2s ease-in-out;
+}
+body main header .heading .actions-wrapper .upload-file-wrapper {
+  position: relative;
+}
+body main header .heading .actions-wrapper .upload-file-wrapper input[type=file] {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+body main header .heading .logout {
+  position: absolute;
+  left: 1rem;
+  display: flex;
+  gap: 10px;
+  border: none;
+  font-size: 1rem;
+  color: #585858;
+  cursor: pointer;
+}
+body main header .heading .logout:hover {
+  color: rgb(95.3179916318, 173.9790794979, 226.6820083682);
+  transform: translateY(-1px);
+  transition: transform 0.2s ease-in-out;
+}
+body main header .add-task-section {
+  width: 100%;
+  border-top: 1px solid #c6c6c6;
+  margin-top: 2rem;
+  padding-top: 2rem;
+}
+body main header .add-task-section form {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  background-color: white;
+  padding: 0.8rem 0.5rem;
+}
+body main header .add-task-section form .task-input {
+  flex: 1;
+  outline: none;
+  border: none;
+}
+body main header .add-task-section form fieldset {
+  display: flex;
+  border: none;
+  outline: none;
+}
+body main header .add-task-section form fieldset .tooltip {
+  position: relative;
+  display: inline-block;
+}
+body main header .add-task-section form fieldset .tooltip .tooltiptext {
+  width: 120px;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  transform: translateX(-50%);
+  background-color: black;
+  color: white;
+  text-align: center;
+  border-radius: 0.3rem;
+  padding: 0.2rem 0;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1;
+}
+body main header .add-task-section form fieldset .tooltip .priority {
+  outline: none;
+  border: none;
+  padding: 0.2rem;
+  cursor: pointer;
+}
+body main header .add-task-section form fieldset .tooltip .deadline {
+  border: none;
+  margin: 0 0.5rem;
+  outline: none;
+  padding: 0.2rem;
+  border: 1px solid lightgray;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+body main header .add-task-section form fieldset .tooltip .deadline i {
+  cursor: pointer;
+}
+body main header .add-task-section form fieldset .tooltip:hover .tooltiptext {
+  opacity: 1;
+}
+body main header .add-task-section form fieldset .add-btn {
+  background-color: #0062ec;
+  color: white;
+  border-radius: 0.2rem;
+  border: none;
+  padding: 0.2rem 1rem;
+}
+body main header .filter-section {
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body main header .filter-section h4 {
+  text-align: start;
+  color: #585858;
+  margin-bottom: 0.5rem;
+  font-size: small;
+}
+body main header .filter-section .filter-wrapper label {
+  color: #585858;
+  font-size: smaller;
+}
+body main header .filter-section .filter-wrapper .sort-key {
+  outline: none;
+  border: none;
+  padding: 0.2rem;
+  cursor: pointer;
+  background-color: #f2f1f1;
+}
+body main header .filter-section .filter-wrapper .radio-btn {
+  color: #3498db;
+  background-color: #34495e;
+}
+body main .tasks {
+  width: 100%;
+  min-height: 200px;
+  max-height: 230px;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-y: auto;
+}
+body main .tasks .message-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body main .tasks .card {
+  width: 100%;
+  display: flex;
+  padding: 0.8rem 0;
+  align-items: center;
+  box-shadow: -2px 1px 157px -41px rgb(171, 171, 171);
+  -webkit-box-shadow: -2px 1px 157px -41px rgb(171, 171, 171);
+  -moz-box-shadow: -2px 1px 157px -41px rgb(171, 171, 171);
+}
+body main .tasks .card:nth-child(even) {
+  border-top: 1px dashed #3498db;
+  border-bottom: 1px dashed #3498db;
+}
+body main .tasks .card .checkbox {
+  padding: 1rem !important;
+}
+body main .tasks .card .isChecked {
+  margin-right: 0.5rem;
+}
+body main .tasks .card p {
+  color: #585858;
+}
+body main .tasks .card .completed {
+  text-decoration: line-through;
+}
+body main .tasks .card .task-title {
+  flex: 1;
+  font-weight: 500;
+  font-size: small;
+}
+body main .tasks .card .task-deadline {
+  margin: 0 0.8rem;
+  font-size: small;
+}
+body main .tasks .card .task-priority {
+  font-size: small;
+}
+body main .tasks .card .edit-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #0062ec;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  width: 20px;
+  height: 20px;
+  padding: 0.3rem;
+}
+body main .tasks .card .edit-icon:hover {
+  border-radius: 50%;
+  background-color: rgb(223.5, 223.5, 223.5);
+  transform: translateY(-1px);
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+body main .tasks .card .trash-icon {
+  color: #cb0303;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  width: 20px;
+  height: 20px;
+  padding: 0.3rem;
+}
+body main .tasks .card .trash-icon:hover {
+  border-radius: 50%;
+  background-color: rgb(223.5, 223.5, 223.5);
+  transform: translateY(-1px);
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu,
+nav, section {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+blockquote::before, blockquote::after, q::before, q::after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  max-width: 1200px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Arial";
+  background: url("../../assets/images/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: -1;
+}
+
+body main .tasks .card {
+  width: 100%;
+  display: flex;
+  padding: 0.8rem 0;
+  align-items: center;
+  box-shadow: -2px 1px 157px -41px rgb(171, 171, 171);
+  -webkit-box-shadow: -2px 1px 157px -41px rgb(171, 171, 171);
+  -moz-box-shadow: -2px 1px 157px -41px rgb(171, 171, 171);
+}
+body main .tasks .card:nth-child(even) {
+  border-top: 1px dashed lightgray;
+  border-bottom: 1px dashed lightgray;
+}
+body main .tasks .card .checkbox {
+  padding: 1rem !important;
+}
+body main .tasks .card .isChecked {
+  margin-right: 0.5rem;
+}
+body main .tasks .card p {
+  color: #585858;
+}
+body main .tasks .card .completed {
+  text-decoration: line-through;
+}
+body main .tasks .card .task-title {
+  flex: 1;
+  font-weight: 500;
+}
+body main .tasks .card .task-deadline {
+  margin: 0 0.8rem;
+}
+body main .tasks .card .edit-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #0062ec;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  width: 20px;
+  height: 20px;
+  padding: 0.3rem;
+}
+body main .tasks .card .edit-icon:hover {
+  border-radius: 50%;
+  background-color: rgb(223.5, 223.5, 223.5);
+  transform: translateY(-1px);
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+body main .tasks .card .trash-icon {
+  color: #cb0303;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  width: 20px;
+  height: 20px;
+  padding: 0.3rem;
+}
+body main .tasks .card .trash-icon:hover {
+  border-radius: 50%;
+  background-color: rgb(223.5, 223.5, 223.5);
+  transform: translateY(-1px);
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+body .login-container {
+  width: 75%;
+  display: flex;
+  background-color: #34495e;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 0.5rem;
+  box-shadow: 0 4px 8px 0 4px 8px rgba(0, 0, 0, 0.58);
+  box-shadow: -1px 6px 29px 2px rgba(0, 0, 0, 0.58);
+  -webkit-box-shadow: -1px 6px 29px 2px rgba(0, 0, 0, 0.58);
+  -moz-box-shadow: -1px 6px 29px 2px rgba(0, 0, 0, 0.58);
+}
+body .login-container .background-image {
+  width: 70%;
+}
+body .login-container .background-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+body .login-container .form-section {
+  width: 30%;
+  min-height: 450px;
+  padding: 1.5rem;
+  color: #ecf0f1;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+body .login-container .form-section .auth-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin-top: -2rem;
+  margin-bottom: 1.5rem;
+}
+body .login-container .form-section .auth-header .auth-header-btn {
+  width: auto;
+  background-color: transparent;
+  text-align: left;
+  display: flex;
+  padding: 0;
+  justify-content: flex-start;
+  font-size: 1.5em;
+  border: none;
+  color: #bbbbbb;
+}
+body .login-container .form-section .auth-header .auth-header-btn:hover {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  transform: translateY(-1px);
+  transition: transform 0.2s ease-in-out;
+}
+body .login-container .form-section .auth-header .active {
+  color: white;
+}
+body .login-container .form-section .auth-signin-form {
+  display: block;
+}
+body .login-container .form-section .auth-signup-form {
+  width: 100%;
+  display: none;
+}
+body .login-container .form-section label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-size: small;
+}
+body .login-container .form-section input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+body .login-container .form-section .input-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+body .login-container .form-section .input-wrapper .toggle-icon {
+  position: absolute;
+  z-index: 9;
+  color: #bbbbbb;
+  right: 0.5rem;
+  bottom: 50%;
+  cursor: pointer;
+}
+body .login-container .form-section .forgot-password {
+  font-size: 0.8rem;
+  color: #3498db;
+  text-decoration: none;
+}
+body .login-container .form-section .forgot-password:hover {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-decoration: underline;
+  background-color: transparent;
+  color: rgb(95.3179916318, 173.9790794979, 226.6820083682);
+  transform: translateY(-1px);
+  transition: transform 0.2s ease-in-out;
+}
+body .login-container .form-section button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  color: #ecf0f1;
+  font-size: 1em;
+  cursor: pointer;
+}
+body .login-container .form-section button.google-signin {
+  background-color: #e74c3c;
+}
+body .login-container .form-section button.google-signin:hover {
+  background-color: #c0392b;
+}
+body .login-container .form-section button:not(.google-signin) {
+  margin-top: 1.5rem;
+  background-color: #3498db;
+}
+body .login-container .form-section button:not(.google-signin):hover {
+  background-color: #2980b9;
+}
+body .login-container footer {
+  width: 70%;
+  margin-top: 20px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 0.85em;
+  margin-top: 1.5rem;
+}
+body .login-container footer a {
+  color: #bdc3c7;
+  text-decoration: none;
+}
+body .login-container footer a:hover {
+  text-decoration: underline;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu,
+nav, section {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+blockquote::before, blockquote::after, q::before, q::after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  max-width: 1200px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Arial";
+  background: url("../../assets/images/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: -1;
+}
+
+body main .confirmation-modal {
+  border: none;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.3rem;
+  box-shadow: -1px 6px 29px 2px rgba(0, 0, 0, 0.27);
+  -webkit-box-shadow: -1px 6px 29px 2px rgba(0, 0, 0, 0.27);
+  -moz-box-shadow: -1px 6px 29px 2px rgba(0, 0, 0, 0.27);
+}
+body main .confirmation-modal .modal-header {
+  width: 100%;
+  padding: 0.8rem 0;
+  margin-bottom: 1.5em;
+  border-bottom: 1px solid #585858;
+}
+body main .confirmation-modal .modal-header .modal-title {
+  text-align: center;
+  color: #cb0303;
+  font-family: "Arial";
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+body main .confirmation-modal .btn-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+body main .confirmation-modal .btn-wrapper .cancel-btn {
+  background-color: #0062ec;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.5rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+body main .confirmation-modal .btn-wrapper .cancel-btn:hover {
+  background-color: rgb(32, 124.6016949153, 255);
+  transform: translateY(-1px);
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+body main .confirmation-modal .btn-wrapper .confirm-btn {
+  background-color: #cb0303;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.5rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+body main .confirmation-modal .btn-wrapper .confirm-btn:hover {
+  background-color: rgb(251.3155339806, 5.6844660194, 5.6844660194);
+  transform: translateY(-1px);
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu,
+nav, section {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+blockquote::before, blockquote::after, q::before, q::after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  max-width: 1200px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Arial";
+  background: url("../../assets/images/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: -1;
+}
+
+body main .modal-edit {
+  width: 40%;
+  border: none;
+  box-shadow: -1px 6px 29px 2px rgba(0, 0, 0, 0.27);
+  -webkit-box-shadow: -1px 6px 29px 2px rgba(0, 0, 0, 0.27);
+  -moz-box-shadow: -1px 6px 29px 2px rgba(0, 0, 0, 0.27);
+  border-radius: 0.3rem;
+  padding: 1rem;
+}
+body main .modal-edit .modal-edit-header {
+  width: 100%;
+  padding: 0.8rem 0;
+  margin-bottom: 1.5em;
+  border-bottom: 1px solid #585858;
+}
+body main .modal-edit .modal-edit-header .modal-edit-title {
+  text-align: center;
+  color: #0062ec;
+  font-family: "Arial";
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+body main .modal-edit .modal-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+body main .modal-edit .modal-form .modal-input {
+  border-radius: 0.3rem;
+}
+body main .modal-edit .modal-form input, body main .modal-edit .modal-form select {
+  outline: none;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border: 1px solid lightgray;
+  border-radius: 0.3rem;
+}
+body main .modal-edit .modal-form label:nth-child(3) {
+  margin-top: 1rem;
+}
+body main .modal-edit .modal-form label:nth-child(5) {
+  margin-top: 1rem;
+}
+body main .modal-edit .modal-form .btn-wrapper-edit {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+body main .modal-edit .modal-form .btn-wrapper-edit .modal-cancel-btn {
+  color: #585858;
+  font-weight: 700;
+  border: none;
+  padding: 0.4rem 0.5rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+body main .modal-edit .modal-form .btn-wrapper-edit .modal-cancel-btn:hover {
+  transform: translateY(-1px);
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+body main .modal-edit .modal-form .btn-wrapper-edit .modal-edit-updateBtn {
+  background-color: #0062ec;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.5rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+body main .modal-edit .modal-form .btn-wrapper-edit .modal-edit-updateBtn:hover {
+  background-color: rgb(32, 124.6016949153, 255);
+  transform: translateY(-1px);
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu,
+nav, section {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+blockquote::before, blockquote::after, q::before, q::after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  max-width: 1200px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Arial";
+  background: url("../../assets/images/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: -1;
+}
+
+body main .sweetAlert-modal {
+  border: none;
+  box-shadow: -1px 6px 29px 2px rgba(0, 0, 0, 0.27);
+  -webkit-box-shadow: -1px 6px 29px 2px rgba(0, 0, 0, 0.27);
+  -moz-box-shadow: -1px 6px 29px 2px rgba(0, 0, 0, 0.27);
+  border-radius: 0.3rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body main .sweetAlert-modal .modal-sweetAlert-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body main .sweetAlert-modal .modal-sweetAlert-header .x-icon {
+  margin: 0.5rem 0;
+  color: #cb0303;
+  font-size: 2.5rem;
+}
+body main .sweetAlert-modal .modal-sweetAlert-header .modal-sweetAlert-title {
+  font-weight: bold;
+  font-size: large;
+  margin: 0.2rem 0 1rem 0;
+}
+body main .sweetAlert-modal p {
+  color: #585858;
+  text-align: center;
+  font-weight: 400;
+  margin: 2rem 0;
+}
+body main .sweetAlert-modal .modal-sweetalert-okBtn {
+  background-color: #0062ec;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.5rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+body main .sweetAlert-modal .modal-sweetalert-okBtn:hover {
+  background-color: rgb(32, 124.6016949153, 255);
+  transform: translateY(-1px);
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/*# sourceMappingURL=styles.css.map */
