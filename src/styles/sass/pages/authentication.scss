@@ -1,0 +1,167 @@
+
+body {
+    .login-container {
+        width: 75%;
+        display: flex;
+        background-color: $blue-navy;
+        border-radius: 10px;
+        overflow: hidden;
+        padding: 0.5rem;
+        box-shadow: 0 4px 8px $box-shadow-color;
+        box-shadow: -1px 6px 29px 2px rgba(0,0,0,0.58);
+        -webkit-box-shadow: -1px 6px 29px 2px rgba(0,0,0,0.58);
+        -moz-box-shadow: -1px 6px 29px 2px rgba(0,0,0,0.58);
+        .background-image {
+            width: 70%;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-top-left-radius: 0.5rem;
+                border-bottom-left-radius: 0.5rem;
+            }
+        }
+        .form-section {
+            width: 30%;
+            min-height: 450px;
+            padding: 1.5rem;
+            color: $text-color;
+            border-top-right-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            .auth-header {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                padding: 0;
+                margin-top: -2rem;
+                margin-bottom: 1.5rem;
+                .auth-header-btn {
+                    width: auto;
+                    background-color: transparent;
+                    text-align: left;
+                    display: flex;
+                    padding: 0;
+                    justify-content: flex-start;
+                    font-size: 1.5em;
+                    border: none;
+                    color: $darker-text-color;
+                    &:hover {
+                        border: none;
+                        outline: none;
+                        cursor: pointer;
+                        background-color: transparent;
+                        color: lighten($light-gray-color, 10%);
+                        transform: translateY(-1px);
+                        transition: transform 0.2s ease-in-out;
+                    }
+                }
+                .active {
+                    color: lighten($light-gray-color, 10%);
+                }
+            }
+            .auth-signin-form {
+                display: block;
+            }
+            .auth-signup-form {
+                width: 100%;
+                display: none;
+            }
+            label {
+                display: block;
+                margin-bottom: 8px;
+                font-weight: bold;
+                font-size: small;
+            }
+
+            input {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 15px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 1em;
+            }
+            .input-wrapper {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                position: relative;
+                .toggle-icon {
+                    position: absolute;
+                    z-index: 9;
+                    color: $darker-text-color;
+                    right: 0.5rem;
+                    bottom: 50%;
+                    cursor: pointer;
+
+                }
+
+            }
+            .forgot-password {
+                font-size: 0.8rem;
+                color: $primary-color;
+                text-decoration: none;
+                &:hover {
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                    text-decoration: underline;
+                    background-color: transparent;
+                    color: lighten($primary-color, 10%);
+                    transform: translateY(-1px);
+                    transition: transform 0.2s ease-in-out;
+                }
+            }
+            button {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 10px;
+                border: none;
+                border-radius: 5px;
+                color: $text-color;
+                font-size: 1em;
+                cursor: pointer;
+                
+                &.google-signin {
+                    background-color: $secondary-color;
+
+                    &:hover {
+                        background-color: $secondary-hover;
+                    }
+                }
+
+                &:not(.google-signin) {
+                    margin-top: 1.5rem;
+                    background-color: $primary-color;
+
+                    &:hover {
+                        background-color: $primary-hover;
+                    }
+                }
+            }
+        }
+
+        footer {
+            width: 70%;
+            margin-top: 20px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            font-size: 0.85em;
+            margin-top: 1.5rem;
+
+            a {
+                color: $light-text;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+

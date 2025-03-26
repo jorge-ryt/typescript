@@ -1,0 +1,14 @@
+{
+    "server": {
+      "baseDir": "./src/pages",
+      "routes": {
+        "/dist": "./dist",
+        "/pages": "./src/pages",
+        "/assets": "./src/assets",
+        "/styles": "./src/styles",
+        "/components": "./src/components",
+        "/constants": "./src/constants",
+        "/utils": "./src/utils"
+      }
+    }
+}

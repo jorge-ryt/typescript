@@ -1,0 +1,47 @@
+@import "./reset.scss";
+
+// Global variables
+$blue-navy: #34495e;
+$light-gray-color: #f2f1f1;
+$white-color: white;
+$blue-color: #0062ec;
+$dark-gray-color: #c6c6c6;
+$red-color: #cb0303;
+$black-gray: #585858;
+$lightgray-color: lightgray;
+$primary-color: #3498db;
+$primary-hover: #2980b9;
+$secondary-color: #e74c3c;
+$secondary-hover: #c0392b;
+$text-color: #ecf0f1;
+$darker-text-color: #bbbbbb;
+$light-text: #bdc3c7;
+$font: "Arial";
+$box-shadow-color: 0 4px 8px rgba(0,0,0,0.58);
+
+body {
+    width: 100%;
+    height: 100vh;
+    max-width: 1200px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $font;
+    background: url('../../assets/images/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        z-index: -1;
+    }
+}

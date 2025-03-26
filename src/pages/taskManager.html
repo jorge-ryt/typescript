@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Task Manager - Manage your task efficiently">
+    <meta name="keywords" content="Task. Manager, Management">
+    <meta name="author" content="Jorge Gomez">
+    <title>Task Manager</title>
+
+    <!-- SEO -->
+    <meta property="og:title" content="Task Manager">
+    <meta property="og:description" content="Task Manager - Manage your task efficiently">
+    <meta property="og:type" content="Website">
+
+    <!-- Graph SEO -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16x16.png">
+    <link rel="manifest" href="../assets/images/site.webmanifest">
+    <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/style.min.css">
+
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"></script>
+    <script
+      defer
+      src="https://kit.fontawesome.com/8df9994193.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" defer src="../../dist/fileManager.bundle.js"></script>
+</head>
+<body>
+    <main id="main">
+        <header>
+            <section class="heading" role="heading">
+                <h1 id="title">Task Manager</h1>
+                <div class="actions-wrapper" role="group">
+                    <button id="download-file" class="download-file"><i class="fa fa-download download-icon" aria-hidden="true"></i></button>
+                    <div class="upload-file-wrapper" role="group">
+                        <input id="upload-file" type="file" accept=".json" />
+                        <i class="fa fa-upload upload-icon" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <button id="logout" class="logout">Logout<i class="fa fa-sign-out" aria-hidden="true"></i></button>
+            </section>
+            <section class="add-task-section">
+                <form aria-labelledby="title">
+                    <input name="title" id="task-input" class="task-input" type="text" required="true" placeholder="Add new task..."  />
+                    <fieldset>
+                        <div class="priority-tooltip tooltip" role="group">
+                            <select name="priority" class="priority" id="priority" required="true">
+                                <option value="urgent">Urgent</option>
+                                <option value="high">High</option>
+                                <option value="medium">medium</option>
+                                <option value="low">low</option>
+                            </select>
+                            <small class="tooltiptext">Priority</small>
+                        </div>
+                        <div class="deadline-tooltip tooltip">
+                            <input id="deadline" type="date" class="deadline" name="deadline" required="true">
+                            <small class="tooltiptext">Deadline</small>
+                        </div>
+                        <button id="add-btn" class="add-btn" type="submit">Add</button>
+                    </fieldset>
+                </form>
+            </section>
+            <section class="filter-section">
+                <!-- <h4>Sort by:</h4> -->
+                <section class="filter-wrapper">
+                    <h4>Sort by:</h4>
+                    <select name="sort-key" class="sort-key" id="sort-key">
+                        <option value="">Select option</option>
+                        <option value="title">Title</option>
+                        <option value="priority">Priority</option>
+                        <option value="deadline">Deadline</option>
+                    </select>
+            
+                    <label for="sort-desc">desc</label>
+                    <input id="sort-desc" class="radio-btn" name="sort-order" type="radio" value="desc" checked />
+            
+                    <label for="sort-asc">asc</label>
+                    <input id="sort-asc" class="radio-btn" name="sort-order" type="radio" value="asc" />
+                </section>
+            </section>
+            
+        </header>
+        <section id="tasks" class="tasks"></section>
+    </main>
+</body>
+</html>
