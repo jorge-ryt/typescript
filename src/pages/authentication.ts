@@ -1,3 +1,4 @@
+
 import { v4 as uuidv4 } from 'uuid';
 import {
 	NO_DATA_TEXT,
@@ -9,7 +10,6 @@ import {
 import SweetAlert from '@/components/sweetAlert';
 import { sanitizeInput, validateEmail } from "@/utils/sanitizeInput";
 import { IUser, HTMLElementWithDataset } from "@/interfaces/authentication";
-// import { hashPassword, isPasswordValid } from '../utils/protectPassword.js';
 
 document.addEventListener("DOMContentLoaded", () => {
 	new Authentication();

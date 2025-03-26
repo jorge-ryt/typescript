@@ -11,7 +11,7 @@ import {
 } from "@/constants/taskManagerConst";
 // Utils
 import { sanitizeInput } from "@/utils/sanitizeInput";
-import { getTasksFromLocalStorage, getActiveUser } from "@/utils/getLocalStorage";
+import { getTasksFromLocalStorage, getTasksByActiveUserLocalStorage, getActiveUser } from "@/utils/getLocalStorage";
 import { IUser } from '@/interfaces/authentication';
 
 class TaskManager {
@@ -88,7 +88,7 @@ class TaskManager {
     public loadTasks(sortedTasks: ITask[] = []): void {
         const taskContainer = document.getElementById("tasks") as HTMLElement;
         if (taskContainer && taskContainer.firstChild) this.clearContainer(taskContainer);
-        const tasks = sortedTasks.length ? sortedTasks : getTasksFromLocalStorage();
+        const tasks = sortedTasks.length ? sortedTasks : getTasksByActiveUserLocalStorage();
 
         const priorityOrder: Record<string, number> = {
             "urgent": 1,
